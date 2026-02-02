@@ -24,12 +24,29 @@ Implementación de un sistema distribuido que simula la planificación y ejecuci
 
 ---
 
-## Compilación y Dependencias
+## Dependencias
 
 ### Prerrequisitos
 El proyecto requiere las `commons-library` de la cátedra. Si no las tienes instaladas ejecute el script install_libs.sh del directorio scripts.
 
+## Ejecución y Pruebas
 
-git clone [https://github.com/sisoputnfrba/so-commons-library](https://github.com/sisoputnfrba/so-commons-library)
-cd so-commons-library
-make install
+Para facilitar el despliegue, el proyecto cuenta con una suite de scripts automatizados que se encargan de **compilar, limpiar logs anteriores y ejecutar todos los módulos** en el orden correcto según el escenario de prueba.
+
+No es necesario levantar los procesos manualmente.
+
+### Instrucciones
+Simplemente ejecuta cualquiera de los scripts con el prefijo `run_test_` que se encuentran en la carpeta scripts:
+
+1. **Dar permisos de ejecución** (solo la primera vez):
+   ```bash
+   chmod +x run_test_*.sh
+   ```
+2. Ejecutar un escenario de prueba: Elige el test que desees correr. Por ejemplo:
+   ```bash
+   ./run_test_errores.sh
+   ./run_test_estabilidad.sh
+   ./run_test_memoria_worker.sh
+   ```
+   El script se encargará de finalizar todos los proceso al terminal la prueba
+   
